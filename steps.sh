@@ -38,11 +38,11 @@ vault read auth/kubernetes/config
 
 #create valut secret, secret policy
 vault secrets enable -path=/secret kv
-vault kv put secret/db-pass pwd="admin@123"
-vault kv get secret/db-pass
+vault kv put secret/data/db-pass pwd="admin@123"
+vault kv get secret/data/db-pass
 
 vault policy write internal-app - <<EOF
-path "secret/db-pass" {
+path "secret/data/db-pass" {
   capabilities = ["read"]
 }
 EOF
