@@ -42,7 +42,7 @@ vault kv put secret/db-pass pwd="admin@123"
 vault kv get secret/db-pass
 
 vault policy write internal-app - <<EOF
-path "secret/db-pass" {
+path "secret/data/db-pass" {
   capabilities = ["read"]
 }
 EOF
